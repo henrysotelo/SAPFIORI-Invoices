@@ -1,0 +1,28 @@
+<mvc:View 
+    controllerName="dev.invoices.controller.InvoicesList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    displayBlock="true">
+
+    <Panel id="_panelIDList" 
+            class="sapUiResponsiveMargin"
+            width="auto" >
+       <List id="_listID" 
+            headerText="Lista del ODATA" 
+            width="auto"
+            items="{northwind>/Invoices}">
+            <items>
+             <ObjectListItem 
+                id="_listItemID" 
+                title="{northwind>Quantity} x {northwind>ProductName}"
+                number="{ parts : [ { path : 'northwind>ExtendedPrice'}, 
+                                    { path : 'currency>/usd' } ],
+                          type: 'sap.ui.model.type.Currency',
+                          formatOptions: { showMeasure : false } }"
+                numberUnit="{currency>/usd}"          
+                          />
+            </items>
+        </List>
+    </Panel>
+</mvc:View>

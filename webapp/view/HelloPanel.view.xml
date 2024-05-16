@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="dev.invoices.controller.HelloPanel"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    
+
+    <Panel id="_panelID"
+            headerText="{i18n>HelloPanel}"
+            class="sapUiResponsiveMargin"
+            width="auto" >
+        <Button id="_buttonID1" text="{i18n>HelloDialog} " class="sapUiSmallMarginEnd" press=".onOpenDialog" />
+        <Button id="_buttonID2" text="{i18n>HelloSay}" class="sapUiSmallMarginEnd" press=".onShowHello" />
+        <Input id="_inputID" width="20%"/>
+    </Panel>
+
+    <core:Fragment fragmentName="dev.invoices.fragment.Form01" type="XML" />
+    
+</mvc:View>
