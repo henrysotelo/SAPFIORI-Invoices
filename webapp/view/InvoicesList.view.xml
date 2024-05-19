@@ -11,7 +11,16 @@
        <List id="_listID" 
             headerText="Lista del ODATA" 
             width="auto"
-            items="{northwind>/Invoices}">
+            items="{ path: 'northwind>/Invoices',
+                     sorter: { path: 'ProductName', group: true }
+                    }">
+            <headerToolbar>
+                <Toolbar id="_IDGenToolbar1" >
+                <Title id="_IDGenTitle1" text="{i18n>InvoicesToolbar}" ></Title>
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                    <SearchField id="_IDGenSearchField1" width="50%" search=".onFilterInvoices"/>
+                </Toolbar>
+            </headerToolbar>
             <items>
              <ObjectListItem 
                 id="_listItemID" 
@@ -21,7 +30,14 @@
                           type: 'sap.ui.model.type.Currency',
                           formatOptions: { showMeasure : false } }"
                 numberUnit="{currency>/usd}"          
-                          />
+                numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
+                
+                    <firstStatus>
+                        <ObjectStatus id="_status" text="{ path: 'northwind>UnitPrice', 
+                                                           formatter: '.formatter.invoiceStatus' }"></ObjectStatus>
+                    </firstStatus>
+                
+                </ObjectListItem>
             </items>
         </List>
     </Panel>
