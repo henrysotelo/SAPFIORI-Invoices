@@ -1,0 +1,19 @@
+<mvc:View 
+    controllerName="dev.invoices.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    displayBlock="true" >
+    <Page id="page" title="{i18n>title}">
+        <headerContent>
+            <Button id="_helloDialogHeader"
+                        icon="sap-icon://action"
+                        press=".onOpenDialogHeader"
+                        class="sapUiSmallMarginEnd" />
+        </headerContent>
+            <content>
+                <mvc:XMLView id="_IDGenXMLView1" viewName="dev.invoices.view.HelloPanel" />
+                <mvc:XMLView id="_IDGenXMLView2" viewName="dev.invoices.view.InvoicesList" />
+            </content>
+    </Page>
+</mvc:View>

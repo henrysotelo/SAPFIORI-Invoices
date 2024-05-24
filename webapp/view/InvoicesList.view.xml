@@ -30,7 +30,8 @@
                           type: 'sap.ui.model.type.Currency',
                           formatOptions: { showMeasure : false } }"
                 numberUnit="{currency>/usd}"          
-                numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
+                numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}"
+                type="Navigation" press="navigateToDetails">
                 
                     <firstStatus>
                         <ObjectStatus id="_status" text="{ path: 'northwind>UnitPrice', 

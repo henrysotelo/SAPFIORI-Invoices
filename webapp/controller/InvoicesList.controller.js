@@ -44,6 +44,19 @@ sap.ui.define([
                 oBinding.filter(aFilter);
 
                 console.log(sQuery);
+            },
+
+            navigateToDetails: function (oEvento) {
+                debugger;
+
+                const oItem = oEvento.getSource();
+                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+
+                oRouter.navTo("Details", { 
+                    invoicePath: window.encodeURIComponent(oItem.getBindingContext("northwind").getPath().substr(1))
+                });
+                console.log(oRouter);
+
             }
 
         });

@@ -1,18 +1,7 @@
 <mvc:View controllerName="dev.invoices.controller.App"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <App id="app">
-        <Page id="page" title="{i18n>title}">
-            <headerContent>
-            <Button id="_helloDialogHeader"
-                        icon="sap-icon://action"
-                        press=".onOpenDialogHeader"
-                        class="sapUiSmallMarginEnd" />
-            </headerContent>
-            <content>
-                <mvc:XMLView id="_IDGenXMLView1" viewName="dev.invoices.view.HelloPanel" />
-                <mvc:XMLView id="_IDGenXMLView2" viewName="dev.invoices.view.InvoicesList" />
-            </content>
-        </Page>
-    </App>
+    <Shell id="_IDGenShell1" >
+        <App id="app"/>
+    </Shell>
 </mvc:View>
