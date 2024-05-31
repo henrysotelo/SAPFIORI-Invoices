@@ -47,8 +47,7 @@ sap.ui.define([
             },
 
             navigateToDetails: function (oEvento) {
-                debugger;
-
+                
                 const oItem = oEvento.getSource();
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 

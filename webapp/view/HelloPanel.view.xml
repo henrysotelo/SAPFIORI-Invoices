@@ -9,9 +9,19 @@
     <Panel id="_panelID"
             headerText="{i18n>HelloPanel}"
             class="sapUiResponsiveMargin"
-            width="auto" >
-        <Button id="_buttonID1" text="{i18n>HelloDialog} " class="sapUiSmallMarginEnd" press=".onOpenDialog" />
-        <Button id="_buttonID2" text="{i18n>HelloSay}" class="sapUiSmallMarginEnd" press=".onShowHello" />
+            width="auto" 
+            expandable="{device>/system/phone}" >
+            
+        <Button id="_buttonID1" 
+                text="{i18n>HelloDialog} " 
+                press=".onOpenDialog" 
+                class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/> 
+
+        <Button id="_buttonID2" 
+                text="{i18n>HelloSay}"  
+                press=".onShowHello" 
+                class="sapUiSmallMarginEnd sapUiHideOnDesktop"/>
+                
         <Input id="_inputID" width="20%"/>
     </Panel>
 

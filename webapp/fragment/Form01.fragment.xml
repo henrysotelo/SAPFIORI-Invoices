@@ -7,7 +7,8 @@
     <Panel id="_IDGenPanel1" 
            headerText="{i18n>panelFrTitle}" 
            class="sapUiResponsiveMargin"
-           width="50%" >
+           width="50%"  
+           expandable="{device>/system/phone}">
        <f:SimpleForm id="_IDGenSimpleForm1"  editable="true">
             <f:content>
                 <Label id="_IDGenLabel1" text="{i18n>labePersonal}" labelFor="persName"/>

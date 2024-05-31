@@ -3,11 +3,11 @@
  */
 
 sap.ui.define([
-        "sap/ui/core/UIComponent",
-        "sap/ui/Device",
-        "dev/invoices/model/models",
-        "./controller/HelloDialog"
-    ],
+    "sap/ui/core/UIComponent",
+    "sap/ui/Device",
+    "dev/invoices/model/models",
+    "./controller/HelloDialog"
+],
     function (UIComponent, Device, models, HelloDialog) {
         "use strict";
 
@@ -31,16 +31,29 @@ sap.ui.define([
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
 
-                 //Nuevo componente
-                 this._helloDialog = new HelloDialog(this.getRootControl());
+                //Nuevo componente
+                this._helloDialog = new HelloDialog(this.getRootControl());
             },
-            exit: function(){
+            exit: function () {
                 this._helloDialog.destroy();
-                delete this._helloDialog(); 
+                delete this._helloDialog();
             },
 
-            openHelloDialog: function(){
+            openHelloDialog: function () {
                 this._helloDialog.open();
+            },
+
+            getContentDensityClass: function () {   
+                
+                if (!Device.support.touch) {
+                
+                    this._sContentDensityClass = "sapUiSizeCompact";
+                
+                } else {
+
+                    this._sContentDensityClass = "sapUiSizeCozy";
+                }
+                return this._sContentDensityClass
             }
         });
     }
