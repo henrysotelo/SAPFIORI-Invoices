@@ -11,7 +11,6 @@ sap.ui.define([
 
         return Controller.extend("dev.invoices.controller.App", {
             onInit: function () {
-                debugger;
                 this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
             },
 
